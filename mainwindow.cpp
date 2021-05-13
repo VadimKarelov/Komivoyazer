@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     myGraph->Draw(scene);
 
     // add information
-    string text = "Задача комивояжера: " + myGraph->GetWay() + "=" + to_string(myGraph->WaySize());
+    string text = "Задача коммивояжёра: " + myGraph->GetWay() + "=" + to_string(myGraph->WaySize());
     QFont font("Times");
     QGraphicsTextItem *txt = scene->addText(QString::fromStdString(text), font);
     txt->setPos(10, 10);

@@ -30,6 +30,8 @@ private:
     void DrawNodes(QGraphicsScene *scene);
 
     void DrawArrows(QGraphicsScene *scene);
+
+    void DrawWaysLength(QGraphicsScene *scene);
 };
 
 #endif // QTGRAPH_H
