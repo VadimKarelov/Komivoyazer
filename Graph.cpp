@@ -106,7 +106,7 @@ vector<int> Graph::Komivoyazer()
     while (!IsSearchEnd())
     {
         RowsReduction();
-        ColumnReduction();
+        ColumnsReduction();
 
         SetMarks();
 
@@ -175,7 +175,7 @@ void Graph::RowsReduction()
     }
 }
 
-void Graph::ColumnReduction()
+void Graph::ColumnsReduction()
 {
     for (int i = 0; i < _cop.size(); i++)
     {

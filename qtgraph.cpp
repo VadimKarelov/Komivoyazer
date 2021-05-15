@@ -32,8 +32,8 @@ void QtGraph::DrawWays(QGraphicsScene *scene)
                 // compute coord of nodes
                 int x1 = centerX + cos(step * i) * l;
                 int x2 = centerX + cos(step * j) * l;
-                int y1 = centerY + sin(step * i) * l;
-                int y2 = centerY + sin(step * j) * l;
+                int y1 = centerY - sin(step * i) * l;
+                int y2 = centerY - sin(step * j) * l;
 
                 // draw line
                 QGraphicsItem *ell = scene->addLine(x1, y1, x2, y2);
@@ -60,8 +60,8 @@ void QtGraph::DrawWaysLength(QGraphicsScene *scene)
                 // compute coord of nodes
                 int x1 = centerX + cos(step * i) * l;
                 int x2 = centerX + cos(step * j) * l;
-                int y1 = centerY + sin(step * i) * l;
-                int y2 = centerY + sin(step * j) * l;
+                int y1 = centerY - sin(step * i) * l;
+                int y2 = centerY - sin(step * j) * l;
 
                 // compute const for drawing
                 double t = r / sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
@@ -93,8 +93,8 @@ void QtGraph::DrawKomivoyazer(QGraphicsScene *scene)
         // compute coord of nodes
         int x1 = centerX + cos(step * i) * l;
         int x2 = centerX + cos(step * j) * l;
-        int y1 = centerY + sin(step * i) * l;
-        int y2 = centerY + sin(step * j) * l;
+        int y1 = centerY - sin(step * i) * l;
+        int y2 = centerY - sin(step * j) * l;
 
         // draw line
         QGraphicsItem *ell = scene->addLine(x1, y1, x2, y2, QPen(QBrush(Qt::red), 3));
@@ -112,7 +112,7 @@ void QtGraph::DrawNodes(QGraphicsScene *scene)
 
     for (int i = 0; i < _mat.size(); i++)
     {
-        QGraphicsItem *ell = scene->addEllipse(centerX + cos(step * i) * l - r, centerY + sin(step * i) * l - r,
+        QGraphicsItem *ell = scene->addEllipse(centerX + cos(step * i) * l - r, centerY - sin(step * i) * l - r,
                                                2 * r, 2 * r,
                                                QPen(Qt::black), QBrush(Qt::green));
         scene->addItem(ell);
@@ -120,7 +120,7 @@ void QtGraph::DrawNodes(QGraphicsScene *scene)
         // draw text
         QFont font("Times");
         QGraphicsTextItem *txt = scene->addText(QString::number(i + 1), font);
-        txt->setPos(centerX + cos(step * i) * l - r, centerY + sin(step * i) * l - r);
+        txt->setPos(centerX + cos(step * i) * l - r, centerY - sin(step * i) * l - r);
     }
 }
 
@@ -142,8 +142,8 @@ void QtGraph::DrawArrows(QGraphicsScene *scene)
                 // compute coord of nodes
                 int x1 = centerX + cos(step * i) * l;
                 int x2 = centerX + cos(step * j) * l;
-                int y1 = centerY + sin(step * i) * l;
-                int y2 = centerY + sin(step * j) * l;
+                int y1 = centerY - sin(step * i) * l;
+                int y2 = centerY - sin(step * j) * l;
 
                 // compute const for drawing arrows
                 double t = r / sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));

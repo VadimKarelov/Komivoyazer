@@ -22,7 +22,7 @@ private:
 
     void RowsReduction();
 
-    void ColumnReduction();
+    void ColumnsReduction();
 
     vector<vector<int>> _marks;
 
